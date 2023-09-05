@@ -218,7 +218,7 @@ jobs:
             pr-android-maven-cache-
 
       - name: Build project
-        run: ./mvnw -B -ntp --file pom.xml clean package -Dandroid
+        run: chmod +x ./mvnw && ./mvnw -B -ntp --file pom.xml clean package -Dandroid
 
       - uses: actions/upload-artifact@v3
         # if: ${{ failure() }}
