@@ -221,9 +221,9 @@ jobs:
         run: ./mvnw -B -ntp --file pom.xml clean package -Dandroid
 
       - uses: actions/upload-artifact@v3
-        if: ${{ failure() }}
+        # if: ${{ failure() }}
         with:
           name: build-pr-android-target
           path: |
-            **/target/surefire-reports/
+            **/target/**.aar
             **/hs_err*.log
